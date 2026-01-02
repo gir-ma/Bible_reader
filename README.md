@@ -1,16 +1,88 @@
-# React + Vite
+# Daily Bible Reading App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Progressive Web App (PWA) for daily Bible reading with audio narration, built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-  **Daily Reading Plan** - Follow a structured year-long Bible reading schedule
+-  **Audio Narration** - Listen to daily readings with built-in text-to-speech
+-  **Date Navigation** - Go back in time to catch up on missed readings
+-  **Mobile-First Design** - Responsive layout optimized for all devices
+-  **Offline Support** - All Bible text stored locally (KJV)
 
-## React Compiler
+## Current Implementation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+###  Completed Stages
+- **Stage 1**: Project setup with React + Vite + Tailwind CSS
+- **Stage 2**: Reading plan logic with date navigation
+- **Stage 3**: Bible text display using local KJV JSON data
+- **Stage 4**: Text-to-speech audio player with speed controls
 
-## Expanding the ESLint configuration
+### 🚧 In Development
+- **Stage 5**: Audio caching (may be skipped)
+- **Stage 6**: Progress tracking with streaks and completion status
+- **Stage 7**: Full PWA features (service worker, offline mode, notifications)
+- **Stage 8**: Deployment to Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **React 19.2.0** - UI framework
+- **Vite 7.3.0** - Build tool and dev server
+- **Tailwind CSS 3.x** - Utility-first styling
+- **Web Speech API** - Browser-native text-to-speech
+- **KJV Bible JSON** - 4.4MB complete King James Version
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+ and npm
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Header.jsx          # Date display and navigation
+│   ├── ReadingView.jsx     # Main content area with readings
+│   ├── Navigation.jsx      # Bottom/top navigation bar
+│   └── AudioPlayer.jsx     # Audio playback controls
+├── hooks/
+│   └── useReadingPlan.js   # Reading plan state management
+├── services/
+│   ├── bibleAPI.js         # Bible text fetching from local JSON
+│   └── audioService.js     # Text-to-speech wrapper
+├── data/
+│   ├── readingPlan.js      # Daily reading schedule
+│   └── kjv.json            # Complete KJV Bible text
+└── App.jsx                 # Root component
+```
+
+## Reading Plan
+
+Each day includes three reading sections:
+- **Old Testament** - Sequential readings through the OT
+- **Psalms & Proverbs** - One chapter per day
+- **New Testament** - Sequential readings through the NT
+
+## License
+
+MIT
