@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Bible Text Styling */
+.bible-text .v {
+  @apply text-xs text-gray-400 align-top mr-1 select-none font-bold;
+}
+
+.bible-text .p {
+  @apply mb-4;
+}
+
+.bible-text .q {
+  @apply pl-4 italic text-gray-600;
+}
+
+.bible-text .s {
+  @apply text-lg font-semibold mt-6 mb-2 text-gray-800;
+}
+
+.bible-text .add {
+  @apply italic text-gray-500;
+}
+
+.bible-text .wj {
+  @apply text-red-700;
+}
